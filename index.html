@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create New Book</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <hr>
+        <h1>Create New Book</h1>
+        <hr>
+
+        <form action="http://localhost:3000/book" method="POST">
+            <div class="form-group">
+                <label for="exampleInputPassword1">TITLE</label>
+                <input class="form-control" name="title">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">AUTHOR</label>
+                <input class="form-control" name="author">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">BOOK NUMBER</label>
+                <input class="form-control" name="booknumber">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+ 
+    <!-- ------------------------------------------------------------->
+
+    <div class="container">
+        <hr>
+        <h1>List of books</h1>
+        <hr>
+
+        <div>
+            <div class="row" id="books">
+            </div>
+        </div>
+    </div>
+
+    <div id="editBookModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Book</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                        <form id="editForm"  method="POST">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">BOOK NUMBER</label>
+                                <input class="form-control" name="booknumber" id="booknumber">
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">TITLE</label>
+                                <input class="form-control" name="title" id="title">
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">AUTHOR</label>
+                                <input class="form-control" name="author" id="author">
+                            </div>
+                
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <form id="searchBook" method="get">
+        <label>SEARCH</label>
+        <input type="number" id="bn">
+        <input type="submit" value="Search">
+    </form>
+
+    <div>
+        <div id="searchBookResult">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="book-list.js"></script>
+
+
+
+</body>
+
+</html>
